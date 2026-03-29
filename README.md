@@ -8,7 +8,11 @@ This project was created in order to test the new library **Remote Compose** (ht
 
 ### Just show me an example!
 
-For now, a simple working example is provided (in the package _remote_, the classes are **RemoteCreatorPage** and **RemotePlayerPage**). It showcases the following: **RemoteColumn**, **RemoteText** and **RemoteSpacer** (with weight 1).
+For now, a simple working example is provided (in the package _remote_, the classes are **RemoteCreatorPage** and **RemotePlayerPage**).
+It showcases the following in the creator: **RemoteColumn**, **RemoteText** and **RemoteSpacer** (with weight 1), and showcases how to use a RemotePlayer:
+
+|![Simple Example Creator](images/simple_example_creator.webp)<br>Simple Example Creator|![Simple Example Player](images/simple_example_player.webp)<br>Simple Example Player
+|:-:|:-:|
 
 _Some notes_:
 - I had to code an alternate remote preview class into the project in order to be able to change the modifiers. The simple example adds a button that is external to the remote preview.
