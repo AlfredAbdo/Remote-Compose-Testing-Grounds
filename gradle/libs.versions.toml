@@ -1,0 +1,56 @@
+[versions]
+agp = "9.1.0"
+kotlin = "2.3.20"
+desugarJDK = "2.1.5"
+
+kotlinx-coroutines = "1.10.2"
+kotlinx-serialization = "1.10.0"
+
+coreKtx = "1.18.0"
+lifecycleKtx = "2.10.0"
+activityCompose = "1.13.0"
+composeBom = "2026.03.01"
+nav3Core = "1.0.1"
+
+composeRemote = "1.0.0-alpha07"
+
+[libraries]
+desugarJDK = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJDK" }
+
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleKtx" }
+androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "lifecycleKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runtime", version.ref = "nav3Core" }
+androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "nav3Core" }
+
+androidx-compose-remote-core = { module = "androidx.compose.remote:remote-core", version.ref = "composeRemote" }
+androidx-compose-remote-creation = { module = "androidx.compose.remote:remote-creation", version.ref = "composeRemote" }
+androidx-compose-remote-creation-core = { module = "androidx.compose.remote:remote-creation-core", version.ref = "composeRemote" }
+androidx-compose-remote-creation-android = { module = "androidx.compose.remote:remote-creation-android", version.ref = "composeRemote" }
+androidx-compose-remote-creation-jvm = { module = "androidx.compose.remote:remote-creation-jvm", version.ref = "composeRemote" }
+androidx-compose-remote-creation-compose = { module = "androidx.compose.remote:remote-creation-compose", version.ref = "composeRemote" }
+androidx-compose-remote-player-core = { module = "androidx.compose.remote:remote-player-core", version.ref = "composeRemote" }
+androidx-compose-remote-player-compose = { module = "androidx.compose.remote:remote-player-compose", version.ref = "composeRemote" }
+androidx-compose-remote-tooling-preview = { module = "androidx.compose.remote:remote-tooling-preview", version.ref = "composeRemote" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
