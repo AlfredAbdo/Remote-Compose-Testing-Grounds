@@ -33,12 +33,14 @@ fun MainPage() {
                     onRedirectToPlayer = { info ->
                         backStack += MainRoute.RemotePlayer(info)
                     },
+                    onBack = backStack::removeLastOrNull,
                 )
             }
 
             entry<MainRoute.RemotePlayer> {
                 RemotePlayerPage(
                     it.infoToDisplay,
+                    onBack = backStack::removeLastOrNull,
                 )
             }
         },

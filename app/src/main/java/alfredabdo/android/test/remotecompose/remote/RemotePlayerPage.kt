@@ -2,6 +2,8 @@ package alfredabdo.android.test.remotecompose.remote
 
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
 import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
+import alfredabdo.android.test.remotecompose.ui.topbar.MainBackIcon
+import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -19,13 +21,14 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun RemotePlayerPage(
     infoToDisplay: ByteArray,
-    //...
+    onBack: () -> Unit,
 ) {
     RemotePlayerUI(
         infoToDisplay,
         Modifier
             .safeDrawingPadding()
             .fillMaxSize(),
+        onBack = onBack,
     )
 }
 
@@ -35,10 +38,16 @@ fun RemotePlayerPage(
 private fun RemotePlayerUI(
     infoToDisplay: ByteArray?,
     modifier: Modifier = Modifier,
+    onBack: () -> Unit = {},
 ) {
     Column(
         modifier,
     ) {
+        MainTopAppBar(
+            "Simple Example",
+            Modifier.fillMaxWidth(),
+            navigationIcon = { MainBackIcon(onBack) },
+        )
         Text("Content played is below:")
         Spacer(Modifier.height(16.dp))
         infoToDisplay?.let {
