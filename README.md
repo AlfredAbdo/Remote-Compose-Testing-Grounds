@@ -18,6 +18,7 @@ _Some notes_:
 - I had to code an alternate remote preview class into the project in order to be able to change the modifiers. The simple example adds a button that is external to the remote preview.
 - I had to create a custom annotation (**DefaultPreview**) so that I can use both Compose and Remote Compose previews in the project (as of version 1.0.0-alpha07, Remote previews mess up the locales for the other previews).
 - I could not find a RemoteButton component in version 1.0.0-alpha07 of Remote Compose.
+- There is a bug with RemoteText (as of version 1.0.0-alpha07): the default color used is different between overloads; the version that takes a **String** uses Black, and the version that takes a **RemoteString** uses White (fallback).
 
 More examples should be added in the future. Please let me know of any mistakes, optimizations, issues, ...
 

@@ -1,6 +1,7 @@
 package alfredabdo.android.test.remotecompose.home
 
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
+import alfredabdo.android.test.remotecompose.examples.counter.CounterRoute
 import alfredabdo.android.test.remotecompose.examples.simple.SimpleRoute
 import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
 import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
@@ -55,6 +56,14 @@ private fun HomeUI(
                 Item(
                     "Simple Example",
                     onClick = { onRedirectTo(SimpleRoute.RemoteCreator) },
+                    Modifier.fillMaxWidth(),
+                )
+            }
+
+            item {
+                Item(
+                    "Counter Example",
+                    onClick = { onRedirectTo(CounterRoute.RemoteCreator) },
                     Modifier.fillMaxWidth(),
                 )
             }

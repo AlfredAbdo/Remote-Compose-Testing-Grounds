@@ -1,5 +1,6 @@
 package alfredabdo.android.test.remotecompose
 
+import alfredabdo.android.test.remotecompose.examples.counter.remoteCounterEntries
 import alfredabdo.android.test.remotecompose.examples.simple.remoteSimpleEntries
 import alfredabdo.android.test.remotecompose.home.HomePage
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,6 +28,7 @@ fun MainPage() {
                 )
             }
             remoteSimpleEntries(backStack)
+            remoteCounterEntries(backStack)
             //...
         },
     )
