@@ -1,4 +1,4 @@
-package alfredabdo.android.test.remotecompose.remote
+package alfredabdo.android.test.remotecompose.examples.simple
 
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
 import alfredabdo.android.test.remotecompose.ui.remote.preview.ImprovedRemotePreview

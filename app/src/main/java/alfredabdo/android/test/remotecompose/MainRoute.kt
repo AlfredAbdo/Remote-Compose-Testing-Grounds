@@ -7,14 +7,4 @@ sealed interface MainRoute : NavKey {
 
     @Serializable
     data object Home : MainRoute
-
-    @Serializable
-    data object RemoteCreator : MainRoute
-
-    @Serializable
-    class RemotePlayer(
-        val infoToDisplay: ByteArray,
-    ) : MainRoute
-
-    //...
 }

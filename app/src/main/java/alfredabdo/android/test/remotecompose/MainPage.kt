@@ -1,8 +1,7 @@
 package alfredabdo.android.test.remotecompose
 
+import alfredabdo.android.test.remotecompose.examples.simple.remoteSimpleEntries
 import alfredabdo.android.test.remotecompose.home.HomePage
-import alfredabdo.android.test.remotecompose.remote.RemoteCreatorPage
-import alfredabdo.android.test.remotecompose.remote.RemotePlayerPage
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -27,22 +26,8 @@ fun MainPage() {
                     onRedirectTo = { route -> backStack += route },
                 )
             }
-
-            entry<MainRoute.RemoteCreator> {
-                RemoteCreatorPage(
-                    onRedirectToPlayer = { info ->
-                        backStack += MainRoute.RemotePlayer(info)
-                    },
-                    onBack = backStack::removeLastOrNull,
-                )
-            }
-
-            entry<MainRoute.RemotePlayer> {
-                RemotePlayerPage(
-                    it.infoToDisplay,
-                    onBack = backStack::removeLastOrNull,
-                )
-            }
+            remoteSimpleEntries(backStack)
+            //...
         },
     )
 }

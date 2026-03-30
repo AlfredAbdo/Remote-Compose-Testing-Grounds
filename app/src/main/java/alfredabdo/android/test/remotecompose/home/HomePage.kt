@@ -1,7 +1,7 @@
 package alfredabdo.android.test.remotecompose.home
 
-import alfredabdo.android.test.remotecompose.MainRoute
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
+import alfredabdo.android.test.remotecompose.examples.simple.SimpleRoute
 import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
 import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
 import androidx.compose.foundation.clickable
@@ -20,10 +20,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation3.runtime.NavKey
 
 @Composable
 fun HomePage(
-    onRedirectTo: (route: MainRoute) -> Unit,
+    onRedirectTo: (route: NavKey) -> Unit,
 ) {
     HomeUI(
         onRedirectTo,
@@ -36,7 +37,7 @@ fun HomePage(
 
 @Composable
 private fun HomeUI(
-    onRedirectTo: (route: MainRoute) -> Unit,
+    onRedirectTo: (route: NavKey) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(modifier) {
@@ -53,7 +54,7 @@ private fun HomeUI(
             item {
                 Item(
                     "Simple Example",
-                    onClick = { onRedirectTo(MainRoute.RemoteCreator) },
+                    onClick = { onRedirectTo(SimpleRoute.RemoteCreator) },
                     Modifier.fillMaxWidth(),
                 )
             }

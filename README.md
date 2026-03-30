@@ -8,11 +8,11 @@ This project was created in order to test the new library **Remote Compose** (ht
 
 ### Just show me an example!
 
-For now, a simple working example is provided (in the package _remote_, the classes are **RemoteCreatorPage** and **RemotePlayerPage**).
-It showcases the following in the creator: **RemoteColumn**, **RemoteText** and **RemoteSpacer** (with weight 1), and showcases how to use a RemotePlayer:
-
-|![Simple Example Creator](images/simple_example_creator.webp)<br>Simple Example Creator|![Simple Example Player](images/simple_example_player.webp)<br>Simple Example Player
-|:-:|:-:|
+You can find all the examples under the package _examples_ in the **main** source folder.
+All examples will rely on the following 2 concepts:
+a 'Creator' (the page/ui that creates the **RemoteComposable** content, and renders it using a previewer for testing purposes),
+and a 'Player' (the page/ui that will render the **RemoteComposable** content).
+Start with the _simple_ one if you want to see how Remote Compose works.
 
 _Some notes_:
 - I had to code an alternate remote preview class into the project in order to be able to change the modifiers. The simple example adds a button that is external to the remote preview.
@@ -21,7 +21,7 @@ _Some notes_:
 
 More examples should be added in the future. Please let me know of any mistakes, optimizations, issues, ...
 
-The library looks promising for server-driven UIs (especially for KYC integrations, where some banks need to update the forms every so often), hopefully Google Play does not enforce a rule about changing UIs
+**N.B.**: The library looks promising for server-driven UIs, hopefully Google Play does not enforce a rule about changing UIs
 after an app was approved (think Apple), and start rejecting apps that use it (because of the possiblity to modify the UI/UX significantly without approval).
 
 _Checklist_:
