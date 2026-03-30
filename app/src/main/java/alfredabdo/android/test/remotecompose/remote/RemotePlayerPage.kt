@@ -76,9 +76,11 @@ private fun RemotePlayerUI(
         )
         Text("Content played is below:")
         Spacer(Modifier.height(16.dp))
-        infoToDisplay?.let {
-            val document = RemoteDocument(it).document
 
+        val document = remember(infoToDisplay) {
+            infoToDisplay?.let { RemoteDocument(it) }?.document
+        }
+        document?.let {
             RemoteDocumentPlayer(
                 document,
                 document.width,
