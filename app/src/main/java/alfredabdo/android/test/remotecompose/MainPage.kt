@@ -1,5 +1,6 @@
 package alfredabdo.android.test.remotecompose
 
+import alfredabdo.android.test.remotecompose.examples.image.remoteImageEntries
 import alfredabdo.android.test.remotecompose.examples.counter.remoteCounterEntries
 import alfredabdo.android.test.remotecompose.examples.simple.remoteSimpleEntries
 import alfredabdo.android.test.remotecompose.home.HomePage
@@ -29,6 +30,7 @@ fun MainPage() {
             }
             remoteSimpleEntries(backStack)
             remoteCounterEntries(backStack)
+            remoteImageEntries(backStack)
             //...
         },
     )
