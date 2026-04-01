@@ -1,6 +1,7 @@
 package alfredabdo.android.test.remotecompose.home
 
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
+import alfredabdo.android.test.remotecompose.examples.animated.AnimatedRoute
 import alfredabdo.android.test.remotecompose.examples.canvas.simple.CanvasSimpleRoute
 import alfredabdo.android.test.remotecompose.examples.image.ImageRoute
 import alfredabdo.android.test.remotecompose.examples.counter.CounterRoute
@@ -74,6 +75,14 @@ private fun HomeUI(
                 Item(
                     "Image Example",
                     onClick = { onRedirectTo(ImageRoute.RemoteCreator) },
+                    Modifier.fillMaxWidth(),
+                )
+            }
+
+            item {
+                Item(
+                    "Animated Example",
+                    onClick = { onRedirectTo(AnimatedRoute.RemoteCreator) },
                     Modifier.fillMaxWidth(),
                 )
             }
