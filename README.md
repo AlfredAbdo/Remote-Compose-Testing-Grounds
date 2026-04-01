@@ -29,5 +29,5 @@ _Checklist_:
 - [ ] Add RemoteButton when it is available.
 - [ ] Add more advanced example with image (and async image loading).
 - [x] Add one or more examples with states (_RemoteFloat_, _RemoteString_, ...).
-- [ ] Add an example using RemoteCanvas.
+- [x] Add an example using RemoteCanvas.
 - [ ] Add one or more examples with states inside RemoteCanvas.

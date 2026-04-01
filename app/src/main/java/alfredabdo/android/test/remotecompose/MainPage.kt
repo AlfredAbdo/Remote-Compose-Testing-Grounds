@@ -1,9 +1,10 @@
 package alfredabdo.android.test.remotecompose
 
 import alfredabdo.android.test.remotecompose.examples.animated.remoteAnimatedEntries
+import alfredabdo.android.test.remotecompose.examples.canvas.animated.remoteCanvasAnimatedEntries
 import alfredabdo.android.test.remotecompose.examples.canvas.simple.remoteCanvasSimpleEntries
-import alfredabdo.android.test.remotecompose.examples.image.remoteImageEntries
 import alfredabdo.android.test.remotecompose.examples.counter.remoteCounterEntries
+import alfredabdo.android.test.remotecompose.examples.image.remoteImageEntries
 import alfredabdo.android.test.remotecompose.examples.simple.remoteSimpleEntries
 import alfredabdo.android.test.remotecompose.home.HomePage
 import androidx.compose.foundation.layout.fillMaxSize
@@ -35,6 +36,7 @@ fun MainPage() {
             remoteImageEntries(backStack)
             remoteCanvasSimpleEntries(backStack)
             remoteAnimatedEntries(backStack)
+            remoteCanvasAnimatedEntries(backStack)
             //...
         },
     )
