@@ -23,6 +23,7 @@ import androidx.compose.remote.creation.compose.layout.RemoteBox
 import androidx.compose.remote.creation.compose.layout.RemoteColumn
 import androidx.compose.remote.creation.compose.layout.RemoteComposable
 import androidx.compose.remote.creation.compose.layout.RemoteOffset
+import androidx.compose.remote.creation.compose.layout.RemoteText
 import androidx.compose.remote.creation.compose.modifier.RemoteModifier
 import androidx.compose.remote.creation.compose.modifier.background
 import androidx.compose.remote.creation.compose.modifier.border
@@ -34,6 +35,7 @@ import androidx.compose.remote.creation.compose.modifier.size
 import androidx.compose.remote.creation.compose.shaders.RemoteLinearGradient
 import androidx.compose.remote.creation.compose.shapes.RemoteRoundedCornerShape
 import androidx.compose.remote.creation.compose.state.RemoteFloat
+import androidx.compose.remote.creation.compose.state.animateRemoteFloat
 import androidx.compose.remote.creation.compose.state.asRemoteDp
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
@@ -118,6 +120,11 @@ private fun RemoteContent() {
     val brushOffset = 128.rdp.toPx() * (1.rf + sin(time))
     val relativeOffset = 32.rf * sin(time)
 
+    //fixme using a non mutable RemoteFloat works, but using a mutable one immediately jumps to the end state without animating it
+//    val cornerRadius2Value = rememberMutableRemoteFloat(32f)
+    val cornerRadius2 = animateRemoteFloat(/*cornerRadius2Value*/32.rf, duration = 2f, initialValue = 0f)
+    //---
+
 
     RemoteColumn(
         RemoteModifier
@@ -125,7 +132,7 @@ private fun RemoteContent() {
             .padding(16.rdp)
             .border(1.rdp, primaryColor),
         horizontalAlignment = RemoteAlignment.CenterHorizontally,
-        verticalArrangement = RemoteArrangement.spacedBy(16.rdp, RemoteAlignment.CenterVertically),
+        verticalArrangement = RemoteArrangement.spacedBy(8.rdp, RemoteAlignment.CenterVertically),
     ) {
         RemoteBox(
             RemoteModifier
@@ -149,6 +156,20 @@ private fun RemoteContent() {
                     )
                 )
         )
+
+        RemoteColumn(
+            horizontalAlignment = RemoteAlignment.CenterHorizontally,
+        ) {
+            RemoteText("I am animated only on start:")
+            RemoteBox(
+                RemoteModifier
+                    .size(128.rdp)
+                    .clip(RemoteRoundedCornerShape(cornerRadius2.asRemoteDp()))
+                    .background(primaryColor)
+            )
+        }
+
+        //TODO add on click animation once it works with RemoteDp.
     }
 }
 

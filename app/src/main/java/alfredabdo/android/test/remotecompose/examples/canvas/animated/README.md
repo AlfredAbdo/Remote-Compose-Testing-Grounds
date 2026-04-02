@@ -1,6 +1,6 @@
 # Canvas Animated Example
 
-An animated example that shows how to do basic time-dependent animation in **RemoteCanvas**.
+An animated example that shows how to do basic time-dependent animations and entry animations in **RemoteCanvas**.
 
 ![Canvas Animated Example](images/example.gif)<br>Canvas Animated Example
 

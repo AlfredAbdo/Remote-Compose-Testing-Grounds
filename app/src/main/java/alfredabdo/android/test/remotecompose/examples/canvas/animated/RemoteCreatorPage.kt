@@ -24,6 +24,7 @@ import androidx.compose.remote.creation.compose.modifier.border
 import androidx.compose.remote.creation.compose.modifier.fillMaxSize
 import androidx.compose.remote.creation.compose.modifier.padding
 import androidx.compose.remote.creation.compose.state.RemotePaint
+import androidx.compose.remote.creation.compose.state.animateRemoteFloat
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
 import androidx.compose.remote.creation.compose.state.rf
@@ -126,6 +127,9 @@ private fun RemoteContent() {
         }
         val circleRadius = 32.rdp.toPx() + (4.rdp.toPx() * sin(time))
 
+        val circleOffset = animateRemoteFloat(0.rf, duration = 3f, initialValue = 128f)
+
+
         drawAnchoredText("Hello!".rs, padding, padding, (-1).rf, 1.rf, paint = textPaint)
         withTransform({
             translate(0.rf, padding + textPaint.textSize + separatorPadding)
@@ -133,7 +137,7 @@ private fun RemoteContent() {
         }) {
             drawLine(separatorPaint, RemoteOffset(0f, 0f), RemoteOffset(width, 0f))
         }
-        drawCircle(circlePaint, radius = circleRadius)
+        drawCircle(circlePaint, RemoteOffset(center.x, center.y + circleOffset), radius = circleRadius)
     }
 }
 
