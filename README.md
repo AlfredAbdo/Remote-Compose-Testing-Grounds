@@ -30,4 +30,4 @@ _Checklist_:
 - [ ] Add more advanced example with image (and async image loading).
 - [x] Add one or more examples with states (_RemoteFloat_, _RemoteString_, ...).
 - [x] Add an example using RemoteCanvas.
-- [ ] Add one or more examples with states inside RemoteCanvas.
+- [ ] <ins>Add one or more examples with states inside RemoteCanvas.</ins>
