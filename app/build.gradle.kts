@@ -7,15 +7,15 @@ plugins {
 android {
     namespace = "alfredabdo.android.test.remotecompose"
     compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
+        version = release(37) {
+//            minorApiLevel = 1
         }
     }
 
     defaultConfig {
         applicationId = "alfredabdo.android.test.remotecompose"
         minSdk = 29 /*26*/ //29 because of remote-player-compose
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
     }
