@@ -3,7 +3,7 @@ agp = "9.2.1"
 kotlin = "2.3.21"
 desugarJDK = "2.1.5"
 
-kotlinx-coroutines = "1.10.2"
+kotlinx-coroutines = "1.11.0"
 kotlinx-serialization = "1.11.0"
 
 coreKtx = "1.18.0"
