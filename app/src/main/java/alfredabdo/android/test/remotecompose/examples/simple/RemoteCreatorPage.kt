@@ -15,7 +15,7 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.remote.creation.compose.action.HostAction
+import androidx.compose.remote.creation.compose.action.hostAction
 import androidx.compose.remote.creation.compose.capture.captureSingleRemoteDocument
 import androidx.compose.remote.creation.compose.layout.RemoteAlignment
 import androidx.compose.remote.creation.compose.layout.RemoteColumn
@@ -115,7 +115,7 @@ private fun RemoteContent() {
             "Press me to say hi",
             RemoteModifier
                 .clickable(
-                    HostAction("say-hi".rs, "hi".rs),
+                    hostAction("say-hi".rs, "hi".rs),
                 )
                 .padding(8.rdp),
         )

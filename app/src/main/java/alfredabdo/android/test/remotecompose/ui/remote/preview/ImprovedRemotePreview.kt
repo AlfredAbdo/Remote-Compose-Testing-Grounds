@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.remote.creation.compose.capture.captureSingleRemoteDocument
 import androidx.compose.remote.creation.compose.layout.RemoteComposable
 import androidx.compose.remote.player.core.RemoteDocument
-import androidx.compose.remote.tooling.preview.RemotePreview
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -17,7 +16,7 @@ import kotlinx.coroutines.runBlocking
 
 /** Display a Remote Compose Composable in the Android Studio Preview.
  *
- * This version allows you to pass other modifiers to the [Box] and content, as opposed to [RemotePreview].*/
+ * This version allows you to pass other modifiers to the [Box] and content, as opposed to RemotePreview.*/
 @SuppressLint("RestrictedApi")
 @Composable
 fun ImprovedRemotePreview(

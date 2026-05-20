@@ -15,8 +15,8 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.remote.creation.compose.action.HostAction
 import androidx.compose.remote.creation.compose.action.ValueChange
+import androidx.compose.remote.creation.compose.action.hostAction
 import androidx.compose.remote.creation.compose.capture.captureSingleRemoteDocument
 import androidx.compose.remote.creation.compose.layout.RemoteAlignment
 import androidx.compose.remote.creation.compose.layout.RemoteColumn
@@ -133,7 +133,7 @@ private fun RemoteContent() {
             "Press me to get the counter above",
             RemoteModifier
                 .clickable(
-                    HostAction("use-counter".rs, counter),
+                    hostAction("use-counter".rs, counter),
                 )
                 .padding(16.rdp),
         )
