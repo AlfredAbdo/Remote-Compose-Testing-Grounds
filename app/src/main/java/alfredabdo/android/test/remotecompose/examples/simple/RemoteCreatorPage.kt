@@ -23,10 +23,14 @@ import androidx.compose.remote.creation.compose.layout.RemoteComposable
 import androidx.compose.remote.creation.compose.layout.RemoteSpacer
 import androidx.compose.remote.creation.compose.layout.RemoteText
 import androidx.compose.remote.creation.compose.modifier.RemoteModifier
+import androidx.compose.remote.creation.compose.modifier.alpha
 import androidx.compose.remote.creation.compose.modifier.border
 import androidx.compose.remote.creation.compose.modifier.clickable
 import androidx.compose.remote.creation.compose.modifier.fillMaxSize
+import androidx.compose.remote.creation.compose.modifier.height
 import androidx.compose.remote.creation.compose.modifier.padding
+import androidx.compose.remote.creation.compose.modifier.rotate
+import androidx.compose.remote.creation.compose.modifier.scale
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
 import androidx.compose.remote.creation.compose.state.rf
@@ -110,6 +114,24 @@ private fun RemoteContent() {
         horizontalAlignment = RemoteAlignment.CenterHorizontally,
     ) {
         RemoteText("Hello World!")
+        RemoteSpacer(RemoteModifier.height(8.rdp))
+        RemoteText(
+            "New modifier: alpha",
+            RemoteModifier
+                .alpha(0.5f.rf),
+        )
+        RemoteSpacer(RemoteModifier.height(8.rdp))
+        RemoteText(
+            "New modifier: scale",
+            RemoteModifier
+                .scale(1.2f.rf, 1.5f.rf),
+        )
+        RemoteSpacer(RemoteModifier.height(8.rdp))
+        RemoteText(
+            "New modifier: rotate",
+            RemoteModifier
+                .rotate(3f.rf),
+        )
         RemoteSpacer(RemoteModifier.weight(1.rf))
         RemoteText(
             "Press me to say hi",
