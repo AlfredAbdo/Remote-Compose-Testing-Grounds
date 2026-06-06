@@ -1,18 +1,18 @@
 [versions]
-agp = "9.2.1"
-kotlin = "2.3.21"
+agp = "9.3.0"
+kotlin = "2.4.10"
 desugarJDK = "2.1.5"
 
 kotlinx-coroutines = "1.11.0"
 kotlinx-serialization = "1.11.0"
 
-coreKtx = "1.18.0"
-lifecycleKtx = "2.10.0"
+core = "1.19.0"
+lifecycleKtx = "2.11.0"
 activityCompose = "1.13.0"
-composeBom = "2026.05.01"
-nav3Core = "1.1.2"
+composeBom = "2026.06.01"
+nav3Core = "1.1.4"
 
-composeRemote = "1.0.0-alpha11"
+composeRemote = "1.0.0-alpha15"
 
 [libraries]
 desugarJDK = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJDK" }
@@ -22,7 +22,7 @@ kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
 
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleKtx" }
 androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleKtx" }
 androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "lifecycleKtx" }

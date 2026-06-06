@@ -1,7 +1,6 @@
 package alfredabdo.android.test.remotecompose.examples.simple
 
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
-import alfredabdo.android.test.remotecompose.ui.remote.preview.ImprovedRemotePreview
 import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
 import alfredabdo.android.test.remotecompose.ui.topbar.MainBackIcon
 import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
@@ -17,6 +16,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.remote.creation.compose.action.hostAction
 import androidx.compose.remote.creation.compose.capture.captureSingleRemoteDocument
+import androidx.compose.remote.creation.compose.capture.rememberRemoteDocument
 import androidx.compose.remote.creation.compose.layout.RemoteAlignment
 import androidx.compose.remote.creation.compose.layout.RemoteColumn
 import androidx.compose.remote.creation.compose.layout.RemoteComposable
@@ -35,6 +35,7 @@ import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
 import androidx.compose.remote.creation.compose.state.rf
 import androidx.compose.remote.creation.compose.state.rs
+import androidx.compose.remote.tooling.preview.RemoteContentPreview
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -58,7 +59,6 @@ fun RemoteCreatorPage(
 }
 
 
-@SuppressLint("RestrictedApi")
 @Composable
 private fun RemoteCreatorUI(
     onRedirectToPlayer: (info: ByteArray) -> Unit,
@@ -67,6 +67,8 @@ private fun RemoteCreatorUI(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
+
+    //val document = rememberRemoteDocument() { RemoteContent() } //TODO use this when stable
 
     fun onSendToPlayer() {
         coroutineScope.launch {
@@ -84,11 +86,10 @@ private fun RemoteCreatorUI(
             navigationIcon = { MainBackIcon(onBack) },
         )
 
-        ImprovedRemotePreview(
+        RemoteContentPreview(
             Modifier
                 .weight(1f)
                 .fillMaxWidth(),
-            previewModifier = Modifier.fillMaxSize(),
         ) {
             RemoteContent()
         }
@@ -102,7 +103,6 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi")
 @RemoteComposable
 @Composable
 private fun RemoteContent() {

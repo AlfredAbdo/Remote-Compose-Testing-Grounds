@@ -1,7 +1,6 @@
 package alfredabdo.android.test.remotecompose.examples.animated
 
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
-import alfredabdo.android.test.remotecompose.ui.remote.preview.ImprovedRemotePreview
 import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
 import alfredabdo.android.test.remotecompose.ui.topbar.MainBackIcon
 import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
@@ -41,6 +40,7 @@ import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
 import androidx.compose.remote.creation.compose.state.rf
 import androidx.compose.remote.creation.compose.state.sin
+import androidx.compose.remote.tooling.preview.RemoteContentPreview
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -64,7 +64,6 @@ fun RemoteCreatorPage(
 }
 
 
-@SuppressLint("RestrictedApi")
 @Composable
 private fun RemoteCreatorUI(
     onRedirectToPlayer: (info: ByteArray) -> Unit,
@@ -90,11 +89,10 @@ private fun RemoteCreatorUI(
             navigationIcon = { MainBackIcon(onBack) },
         )
 
-        ImprovedRemotePreview(
+        RemoteContentPreview(
             Modifier
                 .weight(1f)
                 .fillMaxWidth(),
-            previewModifier = Modifier.fillMaxSize(),
         ) {
             RemoteContent()
         }
@@ -108,7 +106,7 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi")
+@SuppressLint("RestrictedApi") //Rc.Time.CONTINUOUS_SEC, animateRemoteFloat, and background with RemoteBrush
 @RemoteComposable
 @Composable
 private fun RemoteContent() {
