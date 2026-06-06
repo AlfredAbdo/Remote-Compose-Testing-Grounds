@@ -1,7 +1,6 @@
 package alfredabdo.android.test.remotecompose.examples.canvas.animated
 
 import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
-import alfredabdo.android.test.remotecompose.ui.remote.preview.ImprovedRemotePreview
 import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
 import alfredabdo.android.test.remotecompose.ui.topbar.MainBackIcon
 import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
@@ -31,6 +30,7 @@ import androidx.compose.remote.creation.compose.state.rf
 import androidx.compose.remote.creation.compose.state.rs
 import androidx.compose.remote.creation.compose.state.rsp
 import androidx.compose.remote.creation.compose.state.sin
+import androidx.compose.remote.tooling.preview.RemoteContentPreview
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -80,11 +80,10 @@ private fun RemoteCreatorUI(
             navigationIcon = { MainBackIcon(onBack) },
         )
 
-        ImprovedRemotePreview(
+        RemoteContentPreview(
             Modifier
                 .weight(1f)
                 .fillMaxWidth(),
-            previewModifier = Modifier.fillMaxSize(),
         ) {
             RemoteContent()
         }
