@@ -14,8 +14,8 @@ import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.remote.creation.compose.action.ValueChange
 import androidx.compose.remote.creation.compose.action.hostAction
+import androidx.compose.remote.creation.compose.action.valueChange
 import androidx.compose.remote.creation.compose.capture.captureSingleRemoteDocument
 import androidx.compose.remote.creation.compose.layout.RemoteAlignment
 import androidx.compose.remote.creation.compose.layout.RemoteColumn
@@ -115,7 +115,7 @@ private fun RemoteContent() {
         horizontalAlignment = RemoteAlignment.CenterHorizontally,
     ) {
         RemoteText(
-            "Counter current value is: ".rs + counter.toRemoteString(3),
+            "Counter current value is: ".rs + counter.toRemoteString(),
             color = RemoteColor(Color.Black),
         )
         RemoteSpacer(RemoteModifier.height(8.rdp))
@@ -123,7 +123,7 @@ private fun RemoteContent() {
             "Press me to increase the counter above",
             RemoteModifier
                 .clickable(
-                    ValueChange(counter, counter + 1),
+                    valueChange(counter, counter + 1),
                 )
                 .padding(16.rdp),
         )
