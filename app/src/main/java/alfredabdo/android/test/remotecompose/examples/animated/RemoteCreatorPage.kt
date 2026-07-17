@@ -64,7 +64,6 @@ fun RemoteCreatorPage(
 }
 
 
-@SuppressLint("RestrictedApi")
 @Composable
 private fun RemoteCreatorUI(
     onRedirectToPlayer: (info: ByteArray) -> Unit,
@@ -107,7 +106,7 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi")
+@SuppressLint("RestrictedApi") //Rc.Time.CONTINUOUS_SEC, animateRemoteFloat, and background with RemoteBrush
 @RemoteComposable
 @Composable
 private fun RemoteContent() {

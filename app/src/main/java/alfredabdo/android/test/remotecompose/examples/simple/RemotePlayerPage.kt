@@ -58,7 +58,7 @@ fun RemotePlayerPage(
 }
 
 
-@SuppressLint("RestrictedApi")
+@SuppressLint("RestrictedApi") //RemoteDocument and RemoteDocumentPlayer
 @Composable
 private fun RemotePlayerUI(
     infoToDisplay: ByteArray?,

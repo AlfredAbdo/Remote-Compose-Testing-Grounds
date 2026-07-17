@@ -58,7 +58,6 @@ fun RemoteCreatorPage(
 }
 
 
-@SuppressLint("RestrictedApi")
 @Composable
 private fun RemoteCreatorUI(
     onRedirectToPlayer: (info: ByteArray) -> Unit,
@@ -101,7 +100,6 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi")
 @RemoteComposable
 @Composable
 private fun RemoteContent() {

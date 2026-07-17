@@ -16,6 +16,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.remote.creation.compose.action.hostAction
 import androidx.compose.remote.creation.compose.capture.captureSingleRemoteDocument
+import androidx.compose.remote.creation.compose.capture.rememberRemoteDocument
 import androidx.compose.remote.creation.compose.layout.RemoteAlignment
 import androidx.compose.remote.creation.compose.layout.RemoteColumn
 import androidx.compose.remote.creation.compose.layout.RemoteComposable
@@ -58,7 +59,6 @@ fun RemoteCreatorPage(
 }
 
 
-@SuppressLint("RestrictedApi")
 @Composable
 private fun RemoteCreatorUI(
     onRedirectToPlayer: (info: ByteArray) -> Unit,
@@ -67,6 +67,8 @@ private fun RemoteCreatorUI(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val context = LocalContext.current
+
+    //val document = rememberRemoteDocument() { RemoteContent() } //TODO use this when stable
 
     fun onSendToPlayer() {
         coroutineScope.launch {
@@ -101,7 +103,6 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi")
 @RemoteComposable
 @Composable
 private fun RemoteContent() {

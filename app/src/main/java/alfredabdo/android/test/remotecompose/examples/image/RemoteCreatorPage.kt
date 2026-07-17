@@ -31,6 +31,7 @@ import androidx.compose.remote.creation.compose.modifier.padding
 import androidx.compose.remote.creation.compose.state.rb
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
+import androidx.compose.remote.creation.compose.state.rememberRemoteImageBitmap
 import androidx.compose.remote.creation.compose.state.rs
 import androidx.compose.remote.tooling.preview.RemoteContentPreview
 import androidx.compose.runtime.Composable
@@ -58,7 +59,6 @@ fun RemoteCreatorPage(
 }
 
 
-@SuppressLint("RestrictedApi")
 @Composable
 private fun RemoteCreatorUI(
     onRedirectToPlayer: (info: ByteArray) -> Unit,
@@ -101,7 +101,7 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi")
+@SuppressLint("RestrictedApi") //RemoteImage, even though it should be fine
 @RemoteComposable
 @Composable
 private fun RemoteContent() {
@@ -113,6 +113,7 @@ private fun RemoteContent() {
         horizontalAlignment = RemoteAlignment.CenterHorizontally,
     ) {
         val image = ImageBitmap.imageResource(R.drawable.logo_compose).rb
+        //val imageFromUrl = rememberRemoteImageBitmap("https://www.jetpackcompose.net/jetpack-compose-logo.png")
 
         RemoteText("Image from resource:")
         RemoteSpacer(RemoteModifier.height(8.rdp))
@@ -122,6 +123,13 @@ private fun RemoteContent() {
             RemoteModifier
                 .fillMaxWidth(),
         )
+        /*RemoteSpacer(RemoteModifier.height(8.rdp))
+        RemoteImage(
+            imageFromUrl,
+            "Compose Logo from url".rs,
+            RemoteModifier
+                .fillMaxWidth(),
+        )*/
     }
 }
 
