@@ -113,28 +113,28 @@ private fun RemoteContent() {
             .border(1.rdp, MaterialTheme.colorScheme.primary.rc),
         horizontalAlignment = RemoteAlignment.CenterHorizontally,
     ) {
-        RemoteText("Hello World!")
+        RemoteText("Hello World!".rs)
         RemoteSpacer(RemoteModifier.height(8.rdp))
         RemoteText(
-            "New modifier: alpha",
+            "New modifier: alpha".rs,
             RemoteModifier
                 .alpha(0.5f.rf),
         )
         RemoteSpacer(RemoteModifier.height(8.rdp))
         RemoteText(
-            "New modifier: scale",
+            "New modifier: scale".rs,
             RemoteModifier
                 .scale(1.2f.rf, 1.5f.rf),
         )
         RemoteSpacer(RemoteModifier.height(8.rdp))
         RemoteText(
-            "New modifier: rotate",
+            "New modifier: rotate".rs,
             RemoteModifier
                 .rotate(3f.rf),
         )
         RemoteSpacer(RemoteModifier.weight(1.rf))
         RemoteText(
-            "Press me to say hi",
+            "Press me to say hi".rs,
             RemoteModifier
                 .clickable(
                     hostAction("say-hi".rs, "hi".rs),

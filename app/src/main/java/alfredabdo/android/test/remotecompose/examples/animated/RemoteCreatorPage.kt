@@ -31,7 +31,9 @@ import androidx.compose.remote.creation.compose.modifier.fillMaxSize
 import androidx.compose.remote.creation.compose.modifier.offset
 import androidx.compose.remote.creation.compose.modifier.padding
 import androidx.compose.remote.creation.compose.modifier.size
+import androidx.compose.remote.creation.compose.shaders.RemoteBrush
 import androidx.compose.remote.creation.compose.shaders.RemoteLinearGradient
+import androidx.compose.remote.creation.compose.shaders.linearGradient
 import androidx.compose.remote.creation.compose.shapes.RemoteRoundedCornerShape
 import androidx.compose.remote.creation.compose.state.RemoteFloat
 import androidx.compose.remote.creation.compose.state.animateRemoteFloat
@@ -39,6 +41,7 @@ import androidx.compose.remote.creation.compose.state.asRemoteDp
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
 import androidx.compose.remote.creation.compose.state.rf
+import androidx.compose.remote.creation.compose.state.rs
 import androidx.compose.remote.creation.compose.state.sin
 import androidx.compose.remote.tooling.preview.RemoteContentPreview
 import androidx.compose.runtime.Composable
@@ -147,7 +150,7 @@ private fun RemoteContent() {
                 .size(128.rdp)
 //                .clip(RemoteRoundedCornerShape(cornerRadius.asRemoteDp()))
                 .background(
-                    RemoteLinearGradient(
+                    RemoteBrush.linearGradient(
                         listOf(primaryColor, secondaryColor),
                         start = RemoteOffset(0f, 0f),
                         end = RemoteOffset(brushOffset, 0f),
@@ -158,7 +161,7 @@ private fun RemoteContent() {
         RemoteColumn(
             horizontalAlignment = RemoteAlignment.CenterHorizontally,
         ) {
-            RemoteText("I am animated only on start:")
+            RemoteText("I am animated only on start:".rs)
             RemoteBox(
                 RemoteModifier
                     .size(128.rdp)

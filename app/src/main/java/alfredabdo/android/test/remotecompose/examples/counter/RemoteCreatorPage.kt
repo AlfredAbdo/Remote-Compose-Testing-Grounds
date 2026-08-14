@@ -118,7 +118,7 @@ private fun RemoteContent() {
         )
         RemoteSpacer(RemoteModifier.height(8.rdp))
         RemoteText(
-            "Press me to increase the counter above",
+            "Press me to increase the counter above".rs,
             RemoteModifier
                 .clickable(
                     valueChange(counter, counter + 1),
@@ -127,7 +127,7 @@ private fun RemoteContent() {
         )
         RemoteSpacer(RemoteModifier.height(4.rdp))
         RemoteText(
-            "Press me to get the counter above",
+            "Press me to get the counter above".rs,
             RemoteModifier
                 .clickable(
                     hostAction("use-counter".rs, counter),

@@ -115,7 +115,7 @@ private fun RemoteContent() {
         val image = ImageBitmap.imageResource(R.drawable.logo_compose).rb
         //val imageFromUrl = rememberRemoteImageBitmap("https://www.jetpackcompose.net/jetpack-compose-logo.png")
 
-        RemoteText("Image from resource:")
+        RemoteText("Image from resource:".rs)
         RemoteSpacer(RemoteModifier.height(8.rdp))
         RemoteImage(
             image,
