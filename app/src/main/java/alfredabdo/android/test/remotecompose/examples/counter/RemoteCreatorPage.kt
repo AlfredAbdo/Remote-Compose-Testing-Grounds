@@ -100,6 +100,7 @@ private fun RemoteCreatorUI(
     }
 }
 
+@SuppressLint("RestrictedApi")
 @RemoteComposable
 @Composable
 private fun RemoteContent() {
