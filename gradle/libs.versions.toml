@@ -9,10 +9,10 @@ kotlinx-serialization = "1.11.0"
 core = "1.19.0"
 lifecycleKtx = "2.11.0"
 activityCompose = "1.13.0"
-composeBom = "2026.06.01"
-nav3Core = "1.1.5"
+composeBom = "2026.08.00"
+nav3Core = "1.1.6"
 
-composeRemote = "1.0.0-alpha16"
+composeRemote = "1.0.0-alpha17"
 
 [libraries]
 desugarJDK = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJDK" }
