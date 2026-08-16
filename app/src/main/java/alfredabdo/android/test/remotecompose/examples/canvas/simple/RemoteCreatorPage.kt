@@ -126,7 +126,7 @@ private fun RemoteContent() {
         }) {
             drawLine(separatorPaint, RemoteOffset(0f, 0f), RemoteOffset(width, 0f))
         }
-        drawCircle(circlePaint, radius = 32.rdp.toPx())
+        drawCircle(circlePaint, center = RemoteOffset(center.x - padding, center.y - padding), radius = 32.rdp.toPx())
     }
 }
 

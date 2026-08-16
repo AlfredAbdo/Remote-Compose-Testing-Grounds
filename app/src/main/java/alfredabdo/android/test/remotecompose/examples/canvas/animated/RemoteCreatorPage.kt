@@ -128,14 +128,25 @@ private fun RemoteContent() {
         val circleOffset = animateRemoteFloat(0.rf, duration = 3f, initialValue = 128f)
 
 
-        drawAnchoredText("Hello!".rs, anchorX = padding, anchorY = padding, panX = (-1).rf, panY = 1.rf, paint = textPaint)
+        drawAnchoredText(
+            "Hello!".rs,
+            anchorX = padding,
+            anchorY = padding,
+            panX = (-1).rf,
+            panY = 1.rf,
+            paint = textPaint
+        )
         withTransform({
             translate(0.rf, padding + textPaint.textSize + separatorPadding)
             clipRect(padding, 0.rf, width - padding, height)
         }) {
             drawLine(separatorPaint, RemoteOffset(0f, 0f), RemoteOffset(width, 0f))
         }
-        drawCircle(circlePaint, center = RemoteOffset(center.x, center.y + circleOffset), radius = circleRadius)
+        drawCircle(
+            circlePaint,
+            center = RemoteOffset(center.x - padding, center.y - padding + circleOffset),
+            radius = circleRadius,
+        )
     }
 }
 
