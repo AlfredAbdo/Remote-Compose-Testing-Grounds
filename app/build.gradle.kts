@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.androidx.navigation3.ui)
 
     implementation(libs.androidx.compose.remote.core)
+    implementation(libs.androidx.compose.remote.foundation)
     implementation(libs.androidx.compose.remote.creation.core)
     implementation(libs.androidx.compose.remote.creation.compose)
     implementation(libs.androidx.compose.remote.player.core)
