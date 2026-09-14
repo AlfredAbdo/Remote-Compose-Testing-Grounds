@@ -8,7 +8,7 @@ android {
     namespace = "alfredabdo.android.test.remotecompose"
     compileSdk {
         version = release(37) {
-//            minorApiLevel = 1
+            minorApiLevel = 1
         }
     }
 
