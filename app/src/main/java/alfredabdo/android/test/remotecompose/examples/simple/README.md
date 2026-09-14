@@ -7,7 +7,10 @@ It showcases the following in the creator: **RemoteColumn**, **RemoteText** and 
 |:--------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------:|
 
 - _from library version 1.0.0-alpha11_: new modifiers __alpha__, __rotate__ and __scale__, are showcased.
+- _from library version 1.0.0-alpha18_: new modifier __graphicsLayer__ is showcased.
 
 _Some notes_:
 - It seems using more than 1 of the modifiers __alpha__, __rotate__ and __scale__, is not working as of version _1.0.0-alpha11_,
 as only the last modifier applied will win.
+  - ___Update___: as of version _1.0.0-alpha18_, you can use the __graphicsLayer__ RemoteModifier to combine the above needed;
+  however, only one __graphicsLayer__ modifier will be respected.

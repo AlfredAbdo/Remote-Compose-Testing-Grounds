@@ -24,6 +24,7 @@ import androidx.compose.remote.creation.compose.modifier.alpha
 import androidx.compose.remote.creation.compose.modifier.border
 import androidx.compose.remote.creation.compose.modifier.clickable
 import androidx.compose.remote.creation.compose.modifier.fillMaxSize
+import androidx.compose.remote.creation.compose.modifier.graphicsLayer
 import androidx.compose.remote.creation.compose.modifier.height
 import androidx.compose.remote.creation.compose.modifier.padding
 import androidx.compose.remote.creation.compose.modifier.rotate
@@ -129,6 +130,17 @@ private fun RemoteContent() {
             "New modifier: rotate".rs,
             RemoteModifier
                 .rotate(3f.rf),
+        )
+        RemoteSpacer(RemoteModifier.height(8.rdp))
+        RemoteText(
+            "New modifier: graphics layer with all 3 above".rs,
+            RemoteModifier
+                .graphicsLayer {
+                    alpha = 0.5f.rf
+                    scaleX = 1.2f.rf
+                    scaleY = 1.5f.rf
+                    rotationZ = 3f.rf
+                },
         )
         RemoteSpacer(RemoteModifier.weight(1.rf))
         RemoteText(
