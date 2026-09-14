@@ -1,5 +1,6 @@
 package alfredabdo.android.test.remotecompose
 
+import alfredabdo.android.test.remotecompose.examples.adaptive.remoteAdaptiveEntries
 import alfredabdo.android.test.remotecompose.examples.animated.remoteAnimatedEntries
 import alfredabdo.android.test.remotecompose.examples.canvas.animated.remoteCanvasAnimatedEntries
 import alfredabdo.android.test.remotecompose.examples.canvas.simple.remoteCanvasSimpleEntries
@@ -37,6 +38,7 @@ fun MainPage() {
             remoteCanvasSimpleEntries(backStack)
             remoteAnimatedEntries(backStack)
             remoteCanvasAnimatedEntries(backStack)
+            remoteAdaptiveEntries(backStack)
             //...
         },
     )
