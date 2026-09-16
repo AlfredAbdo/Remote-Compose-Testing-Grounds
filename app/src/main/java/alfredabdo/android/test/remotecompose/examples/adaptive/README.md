@@ -3,7 +3,9 @@
 An adaptive example that shows the intended method to handle different screen sizes (adaptive concept).
 It showcases the following in the creator: **RemoteFitBox**.
 
-![Adaptive Example](images/example.gif)<br>Adaptive Example
+![Adaptive Example for unfolded](images/example_unfolded.webp)<br>Adaptive Example for unfolded
+
+![Adaptive Example for phone](images/example_phone.webp)<br>Adaptive Example for phone
 
 _Some notes_:
 

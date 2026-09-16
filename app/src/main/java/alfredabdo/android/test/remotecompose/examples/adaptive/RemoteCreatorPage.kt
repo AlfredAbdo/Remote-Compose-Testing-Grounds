@@ -68,7 +68,7 @@ private fun RemoteCreatorUI(
 
     Column(modifier) {
         MainTopAppBar(
-            "Simple Example",
+            "Adaptive Example",
             Modifier.fillMaxWidth(),
             navigationIcon = { MainBackIcon(onBack) },
         )

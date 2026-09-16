@@ -1,7 +1,5 @@
 package alfredabdo.android.test.remotecompose.examples.adaptive
 
-import alfredabdo.android.test.remotecompose.examples.simple.RemoteCreatorPage
-import alfredabdo.android.test.remotecompose.examples.simple.RemotePlayerPage
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavBackStack
 import androidx.navigation3.runtime.NavKey

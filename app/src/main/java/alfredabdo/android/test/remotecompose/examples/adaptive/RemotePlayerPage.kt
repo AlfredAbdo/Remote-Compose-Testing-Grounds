@@ -70,7 +70,7 @@ private fun RemotePlayerUI(
         modifier,
     ) {
         MainTopAppBar(
-            "Simple Example",
+            "Adaptive Example",
             Modifier.fillMaxWidth(),
             navigationIcon = { MainBackIcon(onBack) },
         )
