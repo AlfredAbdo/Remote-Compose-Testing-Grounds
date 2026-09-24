@@ -1,19 +1,19 @@
 [versions]
-agp = "9.4.0"
+agp = "9.4.1"
 kotlin = "2.4.20"
 desugarJDK = "2.1.5"
 
 kotlinx-coroutines = "1.11.0"
 kotlinx-serialization = "1.11.0"
 
-core = "1.19.0"
+core = "1.19.1"
 lifecycleKtx = "2.11.0"
 activityCompose = "1.13.0"
 composeBom = "2026.09.00"
-nav3Core = "1.1.7"
+nav3Core = "1.2.0"
 
-composeRemote = "1.0.0-alpha19"
-composeRemoteFoundation = "1.0.0-alpha02"
+composeRemote = "1.0.0-alpha20"
+composeRemoteFoundation = "1.0.0-alpha03"
 
 [libraries]
 desugarJDK = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJDK" }
