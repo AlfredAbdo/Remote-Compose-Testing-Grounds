@@ -12,8 +12,8 @@ activityCompose = "1.13.0"
 composeBom = "2026.09.00"
 nav3Core = "1.2.0"
 
-composeRemote = "1.0.0-alpha20"
-composeRemoteFoundation = "1.0.0-alpha03"
+composeRemote = "1.0.0-alpha21"
+composeRemoteFoundation = "1.0.0-alpha04"
 
 [libraries]
 desugarJDK = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJDK" }
