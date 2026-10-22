@@ -1,7 +1,6 @@
 package alfredabdo.android.test.remotecompose.examples.image
 
-import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
-import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
+import alfredabdo.android.test.remotecompose.App
 import alfredabdo.android.test.remotecompose.ui.topbar.MainBackIcon
 import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
 import android.annotation.SuppressLint
@@ -41,6 +40,8 @@ private fun RemotePlayerUI(
     modifier: Modifier = Modifier,
     onBack: () -> Unit = {},
 ) {
+    val bitmapLoader = App.instance.bitmapLoader
+
     Column(
         modifier,
     ) {
@@ -63,13 +64,16 @@ private fun RemotePlayerUI(
                 Modifier
                     .weight(1f)
                     .fillMaxWidth(),
-                //bitmapLoader = ,
+                //fixme loading an image from a url on the player side is not yet supported
+//                bitmapLoader = bitmapLoader,
             )
         }
     }
 }
 
 
+// Cannot preview because of the OkHttpClient
+/*
 @DefaultPreview
 @Composable
 private fun RemotePlayerUI_Preview() {
@@ -79,4 +83,4 @@ private fun RemotePlayerUI_Preview() {
             Modifier.fillMaxSize(),
         )
     }
-}
+}*/

@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
 
+    implementation(libs.okhttp)
+
     implementation(libs.androidx.compose.remote.core)
     implementation(libs.androidx.compose.remote.foundation)
     implementation(libs.androidx.compose.remote.creation.core)
