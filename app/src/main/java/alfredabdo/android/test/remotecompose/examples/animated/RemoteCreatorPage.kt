@@ -32,14 +32,16 @@ import androidx.compose.remote.creation.compose.modifier.offset
 import androidx.compose.remote.creation.compose.modifier.padding
 import androidx.compose.remote.creation.compose.modifier.size
 import androidx.compose.remote.creation.compose.shaders.RemoteBrush
-import androidx.compose.remote.creation.compose.shaders.RemoteLinearGradient
 import androidx.compose.remote.creation.compose.shaders.linearGradient
 import androidx.compose.remote.creation.compose.shapes.RemoteRoundedCornerShape
 import androidx.compose.remote.creation.compose.state.RemoteFloat
-import androidx.compose.remote.creation.compose.state.animateRemoteFloat
+import androidx.compose.remote.creation.compose.state.RemoteTimeVariables
+import androidx.compose.remote.creation.compose.state.animateRemoteFloatAsState
 import androidx.compose.remote.creation.compose.state.asRemoteDp
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
+import androidx.compose.remote.creation.compose.state.rememberMutableRemoteFloat
+import androidx.compose.remote.creation.compose.state.remoteTween
 import androidx.compose.remote.creation.compose.state.rf
 import androidx.compose.remote.creation.compose.state.rs
 import androidx.compose.remote.creation.compose.state.sin
@@ -109,22 +111,24 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi") //Rc.Time.CONTINUOUS_SEC, animateRemoteFloat, and background with RemoteBrush
+@SuppressLint("RestrictedApi") //background with RemoteBrush
 @RemoteComposable
 @Composable
 private fun RemoteContent() {
     val primaryColor = MaterialTheme.colorScheme.primary.rc
     val secondaryColor = MaterialTheme.colorScheme.secondary.rc
 
-    val time = RemoteFloat(Rc.Time.CONTINUOUS_SEC)
+    val time = RemoteTimeVariables.continuousSeconds
     val cornerRadius = 32.rf / 2.rf * (1.rf + sin(time))
     val brushOffset = 128.rdp.toPx() * (1.rf + sin(time))
     val relativeOffset = 32.rf * sin(time)
 
-    //fixme using a non mutable RemoteFloat works, but using a mutable one immediately jumps to the end state without animating it
-//    val cornerRadius2Value = rememberMutableRemoteFloat(32f)
-    val cornerRadius2 = animateRemoteFloat(/*cornerRadius2Value*/32.rf, duration = 2f, initialValue = 0f)
-    //---
+    val cornerRadiusOnceValue = rememberMutableRemoteFloat(32f)
+    val cornerRadiusOnce = animateRemoteFloatAsState(
+        cornerRadiusOnceValue,
+        animationSpec = remoteTween(2_000),
+        initialValue = 0f,
+    )
 
 
     RemoteColumn(
@@ -143,12 +147,11 @@ private fun RemoteContent() {
                 .background(primaryColor)
         )
 
-        //fixme clipping and offset modifiers do not work with RemoteLinearGradient brush.
         RemoteBox(
             RemoteModifier
-//                .offset(relativeOffset.asRemoteDp(), 0.rdp)
+                .offset(relativeOffset.asRemoteDp(), 0.rdp)
                 .size(128.rdp)
-//                .clip(RemoteRoundedCornerShape(cornerRadius.asRemoteDp()))
+                .clip(RemoteRoundedCornerShape(cornerRadius.asRemoteDp()))
                 .background(
                     RemoteBrush.linearGradient(
                         listOf(primaryColor, secondaryColor),
@@ -165,7 +168,7 @@ private fun RemoteContent() {
             RemoteBox(
                 RemoteModifier
                     .size(128.rdp)
-                    .clip(RemoteRoundedCornerShape(cornerRadius2.asRemoteDp()))
+                    .clip(RemoteRoundedCornerShape(cornerRadiusOnce.asRemoteDp()))
                     .background(primaryColor)
             )
         }

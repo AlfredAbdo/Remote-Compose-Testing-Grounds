@@ -5,7 +5,6 @@ import alfredabdo.android.test.remotecompose.annotations.DefaultPreview
 import alfredabdo.android.test.remotecompose.ui.theme.AppTheme
 import alfredabdo.android.test.remotecompose.ui.topbar.MainBackIcon
 import alfredabdo.android.test.remotecompose.ui.topbar.MainTopAppBar
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -30,6 +29,7 @@ import androidx.compose.remote.creation.compose.modifier.padding
 import androidx.compose.remote.creation.compose.state.rb
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
+import androidx.compose.remote.creation.compose.state.rememberRemoteImageBitmap
 import androidx.compose.remote.creation.compose.state.rs
 import androidx.compose.remote.foundation.layout.RemoteSpacer
 import androidx.compose.remote.tooling.preview.RemoteContentPreview
@@ -88,7 +88,9 @@ private fun RemoteCreatorUI(
                 .weight(1f)
                 .fillMaxWidth(),
         ) {
-            RemoteContent()
+            RemoteContent(
+                forPreview = true,
+            )
         }
         Spacer(Modifier.height(16.dp))
         Button(
@@ -100,10 +102,11 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi") //RemoteImage, even though it should be fine
 @RemoteComposable
 @Composable
-private fun RemoteContent() {
+private fun RemoteContent(
+    forPreview: Boolean = false,
+) {
     RemoteColumn(
         RemoteModifier
             .fillMaxSize()
@@ -111,8 +114,10 @@ private fun RemoteContent() {
             .border(1.rdp, MaterialTheme.colorScheme.primary.rc),
         horizontalAlignment = RemoteAlignment.CenterHorizontally,
     ) {
+        //fixme loading an image from a url on the player side is not yet supported
+
         val image = ImageBitmap.imageResource(R.drawable.logo_compose).rb
-        //val imageFromUrl = rememberRemoteImageBitmap("https://www.jetpackcompose.net/jetpack-compose-logo.png")
+//        val imageFromUrl = rememberRemoteImageBitmap("https://www.jetpackcompose.net/jetpack-compose-logo.png")
 
         RemoteText("Image from resource:".rs)
         RemoteSpacer(RemoteModifier.height(8.rdp))
@@ -122,13 +127,21 @@ private fun RemoteContent() {
             RemoteModifier
                 .fillMaxWidth(),
         )
-        /*RemoteSpacer(RemoteModifier.height(8.rdp))
-        RemoteImage(
-            imageFromUrl,
-            "Compose Logo from url".rs,
-            RemoteModifier
-                .fillMaxWidth(),
-        )*/
+        /*RemoteSpacer(RemoteModifier.height(16.rdp))
+        RemoteText("Image from url:".rs)
+        RemoteSpacer(RemoteModifier.height(8.rdp))
+        if (forPreview) {
+            RemoteText(
+                "(will only load inside the player, in the next screen)".rs,
+            )
+        } else {
+            RemoteImage(
+                imageFromUrl,
+                "Compose Logo from url".rs,
+                RemoteModifier
+                    .fillMaxWidth(),
+            )
+        }*/
     }
 }
 

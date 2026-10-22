@@ -23,9 +23,10 @@ import androidx.compose.remote.creation.compose.modifier.border
 import androidx.compose.remote.creation.compose.modifier.fillMaxSize
 import androidx.compose.remote.creation.compose.modifier.padding
 import androidx.compose.remote.creation.compose.state.RemotePaint
-import androidx.compose.remote.creation.compose.state.animateRemoteFloat
+import androidx.compose.remote.creation.compose.state.animateRemoteFloatAsState
 import androidx.compose.remote.creation.compose.state.rc
 import androidx.compose.remote.creation.compose.state.rdp
+import androidx.compose.remote.creation.compose.state.remoteTween
 import androidx.compose.remote.creation.compose.state.rf
 import androidx.compose.remote.creation.compose.state.rs
 import androidx.compose.remote.creation.compose.state.rsp
@@ -96,7 +97,7 @@ private fun RemoteCreatorUI(
     }
 }
 
-@SuppressLint("RestrictedApi") //most canvas functions and members
+@SuppressLint("RestrictedApi") //remote.time.ContinuousSec(), drawAnchoredText, withTransform
 @RemoteComposable
 @Composable
 private fun RemoteContent() {
@@ -125,7 +126,11 @@ private fun RemoteContent() {
         }
         val circleRadius = 32.rdp.toPx() + (4.rdp.toPx() * sin(time))
 
-        val circleOffset = animateRemoteFloat(0.rf, duration = 3f, initialValue = 128f)
+        val circleOffset = animateRemoteFloatAsState(
+            0.rf,
+            animationSpec = remoteTween(3_000),
+            initialValue = 128f,
+        )
 
 
         drawAnchoredText(
