@@ -21,7 +21,6 @@ import androidx.compose.remote.creation.compose.state.rf
 import androidx.compose.remote.creation.compose.state.rs
 import androidx.compose.remote.tooling.preview.RemoteComponentPreview
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 
 @RemoteComposable
@@ -48,7 +47,7 @@ fun AdaptiveTabletVariantPage(
         }
         RemoteBox(
             RemoteModifier
-                .background(Color.Black.rc)
+                .background(android.graphics.Color.BLACK.rc)
                 .fillMaxHeight()
                 .width(1.rdp),
         )
